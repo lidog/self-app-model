@@ -1,0 +1,322 @@
+/*
+ * @Author lizhenhua
+ * @version 2018/5/14
+ * @description
+ */
+
+/*--------------头中底布局样式*/
+
+html {
+  line-height: initial;
+}
+
+body {
+  font-size: 0.32rem;
+  body {
+    user-select: none
+  }
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+  /*overflow-y: auto;*/
+  /*overflow-x: hidden;*/
+  /*这里不能加overflow所有属性，在苹果下会有上下拉盖住顶部底部的bug */
+}
+
+.page {
+  height: 100vh;
+  box-sizing: border-box;
+  //position: relative;/*relative 不能加载page上，会导致切换动画失效*/
+}
+
+.page-overflow {
+  height: 100%;
+  overflow: hidden;
+}
+
+.mobile-top {
+  background: #3275dd;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-top: constant(safe-area-inset-top); /* 这里需要使用 calc 动态计算 */
+  padding-top: env(safe-area-inset-top);
+  padding-left: constant(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-right: env(safe-area-inset-right);
+}
+
+.mobile-content {
+  width: 100%;
+  overflow: hidden;
+  background: #f1f2f6;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 62.5px;
+  padding-top: calc(constant(safe-area-inset-top) + 42.5px); /*1.25rem 本身就预留了信号bar高度0.4rem，这里要减去*/
+  padding-top: calc(env(safe-area-inset-top) + 42.5px);
+  padding-bottom: 50px;
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 50px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 50px);
+  padding-left: calc(constant(safe-area-inset-left));
+  padding-left: calc(env(safe-area-inset-left));
+}
+
+.mobile-content-pb0 {
+  padding-bottom: 0;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mobile-bottom {
+  height: 1rem;
+  height: calc(constant(safe-area-inset-bottom) + 50px);
+  height: calc(env(safe-area-inset-bottom) + 50px);
+  /*position: fixed;*/
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0px 0 1px 1px #ccc;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-right: env(safe-area-inset-right);
+}
+
+input[readonly] {
+  background: #eee;
+}
+
+input:focus {
+  outline: none;
+}
+
+.v-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+}
+/*end--------------------------- 头中底布局样式*/
+
+/*---------------form 相关*/
+.form-card-input {
+  padding: 10px 0.2rem;
+  border: none;
+  font-size: 14px;
+  text-align: right;
+  &:focus {
+    text-align: left;
+  }
+}
+
+.form-line {
+  width: 100%;
+  height: 15px;
+  background-color: #f8f8f8;
+}
+
+/*通用input框 样式*/
+.icon-input-style {
+  color: #191919;
+  margin-top: 0.1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  input {
+    border: none;
+    margin: 0;
+    padding: 0 0.2rem;
+    height: 100%;
+    width: 100%;
+  }
+  .iconfont {
+    font-size: 20px;
+    padding-left: 0.1rem;
+    border-left: 1px solid #a4e1fe;
+  }
+}
+/*end通用input框 样式*/
+
+/*禁止点击按钮*/
+.no-touch.mint-button {
+  background-color: #c8c9cc;
+  color: #fff;
+}
+/*end 禁止点击按钮*/
+
+/*改 radio 控件样式*/
+.mint-radiolist /deep/ {
+  display: flex;
+  justify-content: space-around;
+  .mint-cell-wrapper {
+    font-size: 14px;
+    padding: 0;
+    border: none !important;
+    background-image: none !important;
+    background: transparent !important;
+  }
+  .mint-cell {
+    min-height: auto;
+    background: transparent !important;
+    background-image: none !important;
+  }
+  .mint-radio-input:checked + .mint-radio-core {
+    background-color: #fff;
+  }
+  .mint-radio-input:checked + .mint-radio-core::after {
+    background-color: #26a2ff;
+  }
+}
+
+/*------------end form相关*/
+
+/*---------------副页面相关*/
+/*圆角弹窗*/
+.radius-popup {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.radiusPopup {
+  border-radius: 5px;
+  overflow: hidden;
+}
+/*end 圆角弹窗*/
+
+/*my-popup 右划页面样式*/
+body {
+  /deep/ .my-popup {
+    width: 100%;
+    height: 100%;
+    .mint-button {
+      height: 100%;
+    }
+    .mobile-content {
+      height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+.mint-button {
+  .mint-button-text {
+    user-select: none;
+  }
+}
+/*end my-popup*/
+
+/*loading圈层级*/
+.mint-msgbox-wrapper {
+  z-index: 3000 !important;
+  .mint-msgbox {
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+.mint-indicator-wrapper {
+  z-index: 4000;
+}
+.mint-indicator-mask { //loading 盖住页面
+  z-index: 4000;
+}
+/*end loading圈层级*/
+
+/*表格*/
+.base-table {
+  text-align: left;
+  .t-head {
+    background: #f5f5f5;
+    font-size: 14px;
+    height: 35px;
+    color: #8f8f8f;
+  }
+  .row {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0.2rem;
+    .item {
+      text-align: left;
+      width: 2rem;
+      font-size: 13px;
+      span {
+        color: #8f8f8f;
+      }
+    }
+    .item:last-child {
+      width: 3rem;
+    }
+  }
+  .t-body .row {
+    min-height: 50px;
+    border-bottom: 1px solid #ededed;
+    margin-left: 0.2rem;
+    padding: 0 0.2rem 0 0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+/*表格end*/
+
+/*Toast 颜色*/
+.mint-toast {
+  z-index: 2010;
+  word-break: break-all;
+}
+
+.mint-toast.is-placebottom {
+  font-weight: bolder;
+  &.err {
+    //background: rgba(245,108,108,0.8);
+    background: #feccd5;
+    color: #f56c6c;
+  }
+  &.suc {
+    //background: rgba(103,194,58,0.8);
+    background: #cdf9c3;
+    color: #67c23a;
+  }
+  &.warn {
+    //background: rgba(230,162,60,0.8);
+    background: #fde8af;
+    color: #e6a23c;
+  }
+  &.info {
+    //background: rgba(144,147,153,0.7);
+    background: #eaeaeb;
+    color: #686b71;
+  }
+}
+/*end Toast 颜色*/
+
+.load-more-content { //让拉动屏幕底部也可以刷新 load-more
+  min-height: 77vh;
+}
+
+
+/*end---------------副页面相关*/
+
+
+

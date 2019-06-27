@@ -1,0 +1,254 @@
+/*
+ * @Author lizhenhua
+ * @version 2018/5/14
+ * @description
+ */
+
+/*-------------工具类*/
+.flex-ar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.no-flex{
+  display: inherit!important;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.tl{
+  text-align: left;
+}
+.tr{
+  text-align: right;
+}
+.tc{
+  text-align: center;
+}
+.clear {
+  *zoom: 1;
+}
+
+.clear:before,
+.clear:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clear:after {
+  clear: both;
+}
+
+.dian {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.dian2 {
+  overflow: hidden; /*超出隐藏*/
+  text-overflow: ellipsis; /*文本溢出时显示省略标记*/
+  display: -webkit-box; /*设置弹性盒模型*/
+  -webkit-line-clamp: 2; /*文本占的行数,如果要设置2行加...则设置为2*/
+  -webkit-box-orient: vertical; /*子代元素垂直显示*/
+}
+
+.dian4 {
+  overflow: hidden; /*超出隐藏*/
+  text-overflow: ellipsis; /*文本溢出时显示省略标记*/
+  display: -webkit-box; /*设置弹性盒模型*/
+  -webkit-line-clamp: 4; /*文本占的行数,如果要设置2行加...则设置为2*/
+  -webkit-box-orient: vertical; /*子代元素垂直显示*/
+}
+
+.dian3 {
+  overflow: hidden; /*超出隐藏*/
+  text-overflow: ellipsis; /*文本溢出时显示省略标记*/
+  display: -webkit-box; /*设置弹性盒模型*/
+  -webkit-line-clamp: 3; /*文本占的行数,如果要设置2行加...则设置为2*/
+  -webkit-box-orient: vertical; /*子代元素垂直显示*/
+}
+
+.wh100 {
+  width: 100%;
+  height: 100%;
+}
+
+.oh {
+  overflow: hidden !important;
+  -webkit-overflow-scrolling: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.no-scroll {
+  position: fixed;
+  width: 100%;
+}
+
+.pd {
+  padding: 0.2rem;
+}
+
+.pd20 {
+  padding: 0.2rem;
+}
+
+pl20 {
+  padding-left: 0.2rem;
+}
+
+pr20 {
+  padding-right: 0.2rem;
+}
+
+.pb10{
+  padding-bottom: 0.1rem;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mb20 {
+  margin-bottom: 0.2rem;
+}
+
+.mt10 {
+  margin-top: 0.1rem;
+}
+
+.mt20 {
+  margin-top: 0.2rem;
+}
+
+.ml10 {
+  margin-left: 0.1rem;
+}
+
+.w100{
+  width: 100%;
+}
+
+.w90{
+  width: 90%!important;
+}
+
+.tr {
+  text-align: right !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.ab-mid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.no-data {
+  text-align: center;
+  color: #ccc;
+  padding: .5rem;
+}
+
+.clearfix:after { //在类名为“clearfix”的元素内最后面加入内容；
+  content: "."; //内容为“.”就是一个英文的句号而已。也可以不写。
+  display: block; //加入的这个元素转换为块级元素。
+  clear: both; //清除左右两边浮动。
+  visibility: hidden; //可见度设为隐藏。注意它和display:none;是有区别的。仍然占据空间，只是看不到而已；
+  height: 0; //高度为0；
+  font-size: 0; //字体大小为0；
+}
+
+.no-height {
+  height: auto !important;
+  .mint-button {
+    border-radius: 0;
+  }
+}
+
+.bg0 {
+  background: #fff;
+}
+
+.bg1 {
+  background: #f8f8f8;
+}
+
+.link{
+  color:#26a2ff;
+}
+.link:active{
+  color:#0000FF;
+}
+
+.break{
+  word-break: break-all;
+}
+
+
+.loading { /*css3 loading icon*/
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3275dd;
+  border-radius: 50%;
+  border-left: none;
+  animation: rotates 0.8s infinite linear;
+}
+
+@keyframes rotates {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*动画*/
+/*fade 右进右出*/
+.fade-enter-active {
+  transition: all .2s ease;
+}
+
+.fade-leave-active {
+  transition: all .3s ease;
+}
+
+.fade-enter, .fade-leave-to
+{
+  transform: translateX(100px);
+  opacity: 0;
+}
+/*fade 右进右出*/
+
+/*end动画*/
+
+/*end-------------工具类*/
+
+
+
+
+

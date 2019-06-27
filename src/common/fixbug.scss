@@ -1,0 +1,119 @@
+/*
+ * @Author lizhenhua
+ * @version 2018/5/14
+ * @description
+ */
+
+//安卓弹窗键盘顶起底部的bug
+@media screen and (max-height: 450px) {
+  .mobile-bottom {
+    display: none;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+/*fixed safari 下 多了几条线的bug，chrome下正常*/
+.radio-no-border /deep/ {
+  .mint-cell-wrapper{
+    background-image: none!important;
+    border: none!important;
+    background: transparent!important;
+    user-select: none;
+  }
+  .mint-cell:last-child{
+    background-image: none!important;
+    border: none!important;
+    background: transparent!important;
+  }
+}
+
+/*三星A9 日期组件无显示bug*/
+.mint-datetime-picker,.picker-items{
+  width: 100% !important;
+}
+
+/*动画闪屏bug*/
+.mint-loadmore-content {
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  li {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/*end 动画闪屏bug*/
+
+/*fix 移动端输入板 挡住 input ，textarea 的bug*/
+.input-bug {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  z-index: 6000;
+  animation: input-bug-frames 0.3s;
+}
+
+#inputBugModel {
+  width: 4000px;
+  height: 4000px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 5000;
+  animation: input-bug-model 0.4s;
+}
+
+.input-bug-oh {
+  overflow: hidden !important;
+  -webkit-overflow-scrolling: inherit;
+}
+
+@keyframes input-bug-frames {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 20%;
+  }
+}
+
+@keyframes input-bug-model {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/*end fix移动端输入板 挡住 input textarea 的bug*/
+
+
+/*loading圈层级*/
+.mint-msgbox-wrapper {
+  z-index: 3000 !important;
+  .mint-msgbox {
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+
+.mint-indicator-wrapper {
+  z-index: 4000;
+}
+
+.mint-indicator-mask { //loading 盖住页面
+  z-index: 4000;
+}
+/*end loading圈层级*/
+
+
