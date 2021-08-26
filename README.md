@@ -1,4 +1,3 @@
-
 > A Vue.js project
 
 ## app 脚手架
@@ -8,7 +7,7 @@ es6 转 es5
 压缩代码
 自动化注册组件
 自动化注册路由
-统一处理http respones
+统一处理 http respones
 reset.css
 common.css
 tools.css
@@ -25,3 +24,9 @@ cookie.js
 patten.js
 fastclick.js
 基于 mint-ui 封装的 loadmore
+
+```
+cd projectName
+npm i
+npm start
+```
